@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synthetic user profile",
+  "type": "object",
+  "required": ["userId", "email", "age", "status", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "userId": {"type": "string", "format": "uuid"},
+    "email": {"type": "string", "format": "email", "maxLength": 120},
+    "age": {"type": "integer", "minimum": 18, "maximum": 120},
+    "status": {"type": "string", "enum": ["active", "pending", "locked"]},
+    "createdAt": {"type": "string", "format": "date-time"},
+    "phone": {"type": "string", "maxLength": 24}
+  }
+}
+
